@@ -12,11 +12,13 @@ st.markdown(" This application is a Streamlit app used to analyze the sentiment 
 st.sidebar.markdown(" This application is a Streamlit app used to analyze the sentiment of the tweets 🐦 about US airlines ✈️ ")
 
 
-DATA_URL = ("Tweets.CSV")
+url = 'https://raw.githubusercontent.com/bkalyandheeraj2003/machine_learning-webapp/main/Tweets.csv'
+
 
 @st.cache_data(persist=True)
 def load_data():
-    data = pd.read_csv(DATA_URL)
+    url = 'https://raw.githubusercontent.com/bkalyandheeraj2003/machine_learning-webapp/main/Tweets.csv'
+    data = pd.read_csv(url)
     data['tweet_created'] = pd.to_datetime(data['tweet_created'])
     return data
 
