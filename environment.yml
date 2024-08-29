@@ -1,6 +1,13 @@
-streamlit
-pandas
-numpy
-plotly
-matplotlib
-wordcloud
+name: streamkit
+channels:
+  - defaults
+dependencies:
+  - python=3.10
+  - pip
+  - pip:
+    - streamlit
+    - plotly
+    - pandas
+    - numpy
+    - matplotlib
+    - wordcloud
