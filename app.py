@@ -45,7 +45,7 @@ if not st.sidebar.checkbox('Hide', False, key='hide_tweets'):
 st.sidebar.subheader("When and where are the users tweeting from?")
 hour = st.sidebar.slider("Hour of day", 0, 23, key='hour_slider')
 modified_data = data[data['tweet_created'].dt.hour == hour]
-if not st.sidebar.checkbox("Close", True, key='close_map'):
+if not st.sidebar.checkbox("Close", False, key='close_map'):
     st.markdown("### Tweets location based on the time of the day")
     st.markdown("%i tweets between %i:00 and %i:00" % (len(modified_data), hour, (hour+1)%24))
     st.map(modified_data)
@@ -63,7 +63,7 @@ if len(choice) > 0:
 st.sidebar.header("Word Cloud")
 word_sentiment = st.sidebar.radio('Display word cloud for which sentiment?', ('positive', 'negative', 'neutral'), key='wordcloud_radio')
 
-if not st.sidebar.checkbox("Close", True, key='close_wordcloud'):
+if not st.sidebar.checkbox("Close", False, key='close_wordcloud'):
     st.header('Word cloud for %s sentiment' % (word_sentiment))
     df = data[data['airline_sentiment'] == word_sentiment]
     words = ' '.join(df['text'])
