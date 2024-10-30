@@ -33,7 +33,7 @@ select = st.sidebar.selectbox('Visualization type', ['Histogram', 'Pie Chart'], 
 sentiment_count = data['airline_sentiment'].value_counts()
 sentiment_count = pd.DataFrame({'Sentiment': sentiment_count.index, 'Tweets': sentiment_count.values})
 
-if not st.sidebar.checkbox('Hide', True, key='hide_tweets'):
+if not st.sidebar.checkbox('Hide', False, key='hide_tweets'):
     st.markdown("### Number of tweets by Sentiment")
     if select == "Histogram":
         fig = px.bar(sentiment_count, x='Sentiment', y='Tweets', color='Tweets', height=500)
