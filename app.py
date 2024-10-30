@@ -53,7 +53,7 @@ if not st.sidebar.checkbox("Close", False, key='close_map'):
         st.write(modified_data)
 
 st.sidebar.subheader("Breakdown airline tweets by sentiment")
-choice = st.sidebar.multiselect("Pick airlines", ('US Airways', 'United', 'American', 'Southwest', 'Delta', 'Virgin America'), key='airline_multiselect')
+choice = st.sidebar.multiselect("Pick airlines", ('US Airways', 'United', 'American', 'Southwest', 'Delta', 'Virgin America'), key='US Airways')
 
 if len(choice) > 0:
     choice_data = data[data.airline.isin(choice)]
